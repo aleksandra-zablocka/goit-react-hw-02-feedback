@@ -41,6 +41,7 @@ body {
 
 .answerBtn:hover {
   box-shadow: rgba(128, 79, 70, 0.677) 0px 7px 9px 0px;
+  background-color: #f2f2f2;
 }
 
 .beans {
