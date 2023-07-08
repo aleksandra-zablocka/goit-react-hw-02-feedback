@@ -35,16 +35,19 @@ class Feedback extends Component {
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />
                 <img
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />
                 <img
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />
               </div>
             </button>
@@ -60,11 +63,13 @@ class Feedback extends Component {
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />{' '}
                 <img
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />
               </div>
             </button>
@@ -80,6 +85,7 @@ class Feedback extends Component {
                   src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
                   width="20px"
                   height="12px"
+                  alt="coffee bean"
                 />
               </div>
             </button>
