@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import css from './FeedbackOptions/FeedbackOptions.module.css';
 import Statistics from 'components/Statistics/Statistics';
+import Section from './Section/Section';
+import Notification from './Notification/Notification';
 
 class App extends Component {
   state = {
@@ -13,13 +15,13 @@ class App extends Component {
   countTotal = () => {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
-  }
-  
+  };
+
   countPositivePercentage = () => {
     const { good } = this.state;
     const total = this.countTotal();
     return total !== 0 ? ((good / total) * 100).toFixed(0) : '';
-  }
+  };
 
   onLeaveFeedback = event => {
     const { name } = event.target;
@@ -31,23 +33,28 @@ class App extends Component {
   render() {
     const { good, neutral, bad } = this.state;
     const options = Object.keys(this.state);
+    const totalFeedback = good + neutral + bad;
     return (
       <div>
         <form className={css.feedback}>
-          <h2>What is your opinion about Expresso Cafe?</h2>
-          <FeedbackOptions
-            options={options}
-            onLeaveFeedback={this.onLeaveFeedback}
-          />
+             <Section title="What is your opinion about Expresso Cafe?">
+            <FeedbackOptions
+              options={options}
+              onLeaveFeedback={this.onLeaveFeedback}
+            />
+          </Section>
         </form>
 
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotal()}
-          positivePercentage={this.countPositivePercentage()}
-        />
+        <Section title="Statistics">
+          {totalFeedback > 0 ? (
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotal()}
+            positivePercentage={this.countPositivePercentage()}
+          />) : (<Notification message="There is no feedback yet"/>)}
+        </Section>
       </div>
     );
   }

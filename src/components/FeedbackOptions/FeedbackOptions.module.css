@@ -4,7 +4,7 @@ body {
   justify-content: center;
 }
 
-.feedback {
+/* .feedback {
   gap: 10px;
   border-radius: 15px;
   padding: 20px;
@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .answers {
   margin: 10px;
