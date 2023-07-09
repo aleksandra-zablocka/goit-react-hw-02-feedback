@@ -4,6 +4,7 @@ import css from './FeedbackOptions/FeedbackOptions.module.css';
 import Statistics from 'components/Statistics/Statistics';
 import Section from './Section/Section';
 import Notification from './Notification/Notification';
+import ThankYou from './ThankYou/ThankYou';
 
 class App extends Component {
   state = {
@@ -43,18 +44,28 @@ class App extends Component {
               onLeaveFeedback={this.onLeaveFeedback}
             />
           </Section>
-        </form>
-
-        <Section title="Statistics">
           {totalFeedback > 0 ? (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={this.countTotal()}
-            positivePercentage={this.countPositivePercentage()}
-          />) : (<Notification message="There is no feedback yet"/>)}
-        </Section>
+            <Section title="Statistics">
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={this.countTotal()}
+                positivePercentage={this.countPositivePercentage()}
+              />
+            </Section>
+          ) : (
+            <Section title="Statistics">
+              <Notification message="There is no feedback yet" />
+            </Section>
+          )}
+
+          {totalFeedback > 0 && (
+            <Section title="Thank You">
+              <ThankYou message="Thanks for your feedback! We hope to see you again!"/>
+            </Section>
+          )}
+        </form>
       </div>
     );
   }
