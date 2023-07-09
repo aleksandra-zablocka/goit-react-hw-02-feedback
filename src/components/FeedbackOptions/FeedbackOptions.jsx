@@ -1,7 +1,7 @@
 import css from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-const coffeebeanimg = (
+const coffeeBeanImg = (
   <img
     src="https://w7.pngwing.com/pngs/504/1013/png-transparent-instant-coffee-espresso-coffee-bean-arabica-coffee-coffee-beans-coffee-snout-bean.png"
     width="20px"
@@ -24,22 +24,18 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => (
 
         {option === 'good' && (
           <div className={css.beans}>
-            {coffeebeanimg}
-            {coffeebeanimg}
-            {coffeebeanimg}
+            {coffeeBeanImg}
+            {coffeeBeanImg}
+            {coffeeBeanImg}
           </div>
         )}
         {option === 'neutral' && (
           <div className={css.beans}>
-            {coffeebeanimg}
-            {coffeebeanimg}
+            {coffeeBeanImg}
+            {coffeeBeanImg}
           </div>
         )}
-        {option === 'bad' && (
-          <div className={css.beans}>
-            {coffeebeanimg}
-          </div>
-        )}
+        {option === 'bad' && <div className={css.beans}>{coffeeBeanImg}</div>}
       </button>
     ))}
   </div>
