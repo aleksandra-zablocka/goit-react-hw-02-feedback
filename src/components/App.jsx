@@ -9,7 +9,17 @@ class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  options = Object.keys(this.state);
+
+  countTotal = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  }
+  
+  countPositivePercentage = () => {
+    const { good } = this.state;
+    const total = this.countTotal();
+    return total !== 0 ? ((good / total) * 100).toFixed(0) : '';
+  }
 
   onLeaveFeedback = event => {
     const { name } = event.target;
@@ -19,20 +29,24 @@ class App extends Component {
   };
 
   render() {
+    const { good, neutral, bad } = this.state;
+    const options = Object.keys(this.state);
     return (
       <div>
         <form className={css.feedback}>
           <h2>What is your opinion about Expresso Cafe?</h2>
           <FeedbackOptions
-            options={this.options}
+            options={options}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </form>
 
         <Statistics
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
+          good={good}
+          neutral={neutral}
+          bad={bad}
+          total={this.countTotal()}
+          positivePercentage={this.countPositivePercentage()}
         />
       </div>
     );
