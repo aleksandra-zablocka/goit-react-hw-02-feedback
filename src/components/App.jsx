@@ -61,8 +61,8 @@ class App extends Component {
           )}
 
           {totalFeedback > 0 && (
-            <Section title="Thank You">
-              <ThankYou message="Thanks for your feedback! We hope to see you again!"/>
+            <Section title="Thank you">
+              <ThankYou message="Thanks for your feedback. We hope to see you again!"/>
             </Section>
           )}
         </form>
